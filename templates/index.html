@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>云U盘</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>云U盘</h1>
+        <div class="upload-section">
+            <h2>上传文件</h2>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" required>
+                <label for="download_count">下载次数：</label>
+                <input type="number" name="download_count" value="2" min="1" required>
+                <button type="submit">上传</button>
+            </form>
+        </div>
+        <div class="download-section">
+            <h2>下载文件</h2>
+            <form action="/download" method="post">
+                <label for="download_code">下载码：</label>
+                <input type="text" name="download_code" required>
+                <button type="submit">下载</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
